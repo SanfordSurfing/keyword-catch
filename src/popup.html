@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keyword Catch</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="head">
+    <div>
+      <div class="name">Keyword Catch</div>
+      <div class="tagline">收集搜索建议，导出结果网址</div>
+    </div>
+    <span class="count" id="count">0</span>
+  </header>
+
+  <label class="toggle">
+    <input type="checkbox" id="auto" checked>
+    自动收集建议
+  </label>
+
+  <div class="row">
+    <button type="button" class="btn btn-primary" id="collect"><span>收集当前建议</span><kbd class="shortcut" data-command="collect-suggestions" hidden></kbd></button>
+  </div>
+  <div class="row row-serp">
+    <button type="button" class="btn" id="serp-copy"><span>复制本页网址</span><kbd class="shortcut" data-command="copy-serp-urls" hidden></kbd></button>
+    <button type="button" class="btn" id="serp-txt">下载 TXT</button>
+    <button type="button" class="btn" id="serp-csv">下载 CSV</button>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <ul id="list" class="list"></ul>
+
+  <div class="row footer">
+    <button type="button" class="btn" id="copy">复制词</button>
+    <button type="button" class="btn" id="txt">词 TXT</button>
+    <button type="button" class="btn" id="csv">词 CSV</button>
+    <button type="button" class="btn btn-danger" id="clear">清空</button>
+  </div>
+
+  <p class="hint">请在 Google 搜索页使用。关键词会保存在本机，关掉浏览器也不会丢，直到你点清空。快捷键可在 chrome://extensions/shortcuts 自行修改。</p>
+
+  <script src="shared/utils.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
